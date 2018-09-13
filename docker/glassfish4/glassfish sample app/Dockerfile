@@ -2,7 +2,7 @@
 
 FROM glassfish_4_1:latest
 
-MAINTAINER vadim <vadym.oliinyk@wgu.edu>
+MAINTAINER voli <voli>
 
 COPY glassfish.passwords /glassfish.passwords
 COPY create_domain.sh /
@@ -11,7 +11,7 @@ RUN chmod +x /*.sh
 
 RUN /create_domain.sh app_domain
 
-ENV APP_FILE=ProgramCourseVersioner-2.4.5.war
+ENV APP_FILE=app.war
 COPY program-course-versioner/target/$APP_FILE /
 
 
