@@ -1,0 +1,2 @@
+"[:params]" | dedup goto | fields goto | rex field=_raw "goto=(?<app_url>http.*//.*)" | sort app_url | dedup app_url]
+"[:params]" | dedup goto | fields goto | rex field=_raw "goto=(?<app_url>\w+://([\w\-\.]+)(:\d+)?)" |  dedup app_url | sort app_url 
